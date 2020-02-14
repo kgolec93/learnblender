@@ -10,7 +10,7 @@ $orange: #ff9a36;
     top: 0;
     left: 0;
     background-color: #555971;
-    opacity: 0.72;
+    opacity: 0.7;
   }
 }
 
@@ -21,6 +21,7 @@ $orange: #ff9a36;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Comfortaa:300|Montserrat:700|Raleway:300&display=swap&subset=latin-ext");
@@ -41,6 +42,10 @@ $orange: #ff9a36;
 
 .montserrat {
   font-family: "Montserrat", sans-serif;
+}
+
+.orange {
+    color: $orange;
 }
 
 body {
@@ -203,6 +208,89 @@ body {
       opacity: 0;
     }
   }
+}
+
+#scenes-container {
+    display: flex;
+    min-height: 800px;
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3vw;
+        flex: 1;
+        h4 {
+            font-size: 4rem;
+        }
+    }
+    .image-container {
+        flex: 1;
+        position: relative;
+        img {
+            @include cover();
+            object-fit: contain;
+            object-position: right center;
+        }
+    }
+}
+
+#details-jumbo {
+    height: 500px;
+    position: relative;
+    @include after();
+    .background {
+        @include cover();
+    }
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        h3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            flex: auto;
+            text-align: center;
+            font-size: 2vw;
+        }
+        nav {
+            width: 100%;
+            border-top: 1px solid $white;
+            ul {
+                display: flex;
+                justify-content: center;
+                list-style: none;
+                li {
+                    padding: 12px 20px;
+                    margin: 0px 8px;
+                    &.active {
+                        position: relative;
+                        &::after {
+                            position: absolute;
+                            content: '';
+                            width: 100%;
+                            height: 3px;
+                            background-color: $white;
+                            bottom: 0;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#details-container {
+    min-height: 700px;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 @keyframes fade-in {
