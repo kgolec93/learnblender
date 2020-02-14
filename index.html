@@ -207,14 +207,14 @@
                 Czas na szczegóły
             </h3>
             <nav>
-                <ul>
-                    <li class="active">
+                <ul id='details-nav'>
+                    <li onclick="detailsSelection(0)" class="active">
                         szczegóły kursu
                     </li>
-                    <li>
+                    <li onclick="detailsSelection(1)">
                         wymagania
                     </li>
-                    <li>
+                    <li onclick="detailsSelection(2)">
                         program kursu
                     </li>
                 </ul>
@@ -222,7 +222,182 @@
         </div>
     </div>
     <div id="details-container">
+        <div id="items-wrapper">
 
+            <div id='detail-item' class="item">
+                <div class="image-container">
+                    <img src="/assets/img/details01.jpg" alt="Wizualizacje 3d kurs wrocław">
+                </div>
+                <div class="content-container">
+                    <div class="headers">
+                        <div class="header-item">
+                            <h4 class="montserrat">ile kosztuje?</h4>
+                            <h5 class="orange montserrat">699zł</h5>
+                        </div>
+                        <div class="header-item">
+                            <h4 class="montserrat">gdzie?</h4>
+                            <h5 class="orange montserrat">Wrocław</h5>
+                        </div>
+                        <div class="header-item">
+                            <h4 class="montserrat">ile trwa?</h4>
+                            <h5 class="orange montserrat">4dni - 32h</h5>
+                        </div>
+                        <div class="header-item">
+                            <h4 class="montserrat">jaka forma?</h4>
+                            <h5 class="orange montserrat">warsztaty</h5>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>
+                            Cena kursu wynosi 699zł. To daje około 21,84zł za godzinę zajęć. Raczej uczciwa cena za
+                            ogrom wiedzy, którą przyswoisz w czasie trwania kursu?
+                            <br />
+                            <br />
+                            Nasz kurs trwa 2 weekendy - sobota i niedziela - każdego dnia jest po 8 godzin zegarowych
+                            zajęć, co daje nam razem 32 godziny nauki. Spokojnie. Mało kto wytrzymał by tyle czas bez
+                            żadnej pauzy. W trakcie dnia przewidziana jest jedna dłuższa przerwa obiadowa i krótsze
+                            przerwy kawowe.
+                            <br />
+                            <br />
+                            Kurs odbywa się w Fabryce Sensu przy ul. Benedykta Polaka we Wrocławiu. Kameralna atmosfera
+                            zdecydowanie pomoże w przyswajaniu dość trudnego i nietypowego materiału.
+                            <br />
+                            <br />
+                            Ponieważ aż 70% wiedzy przyswajamy przez praktykę, nasze kursy odbywają się w formie
+                            warsztatów. Nie będziemy zanudzać Cię godzinami wykładów, wszystkiego nauczysz się w
+                            trakcie, wykonując krok po kroku prowadzone przez nas ćwiczenia, na których końcu stworzysz
+                            swoje własne modele i sceny.
+                            <br />
+                            <br />
+                            W trakcie zajęć otrzymasz od nas także przydatne do nauki materiały, ściągi, a także
+                            materiały niezbędne do wykonania opracowywanych w trakcie warsztatów scen, takie jak modele
+                            czy tekstury.
+                            <br />
+                            <br />
+                            A na koniec kursu otrzymasz od nas certyfikat, potwierdzający jego ukończenie i będziesz
+                            mógł w pełni rozpocząć swoją przygodę z grafiką 3d oraz wizualizacjami!
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="image-container">
+                    <img src="/assets/img/details02.jpg" alt="Wizualizacje 3d kurs wrocław">
+                </div>
+                <div class="content-container">
+                    <div class="headers">
+                        <div class="header-item">
+                            <h4 class="montserrat">poziom kursu?</h4>
+                            <h5 class="orange montserrat">podstawowy</h5>
+                        </div>
+                        <div class="header-item">
+                            <h4 class="montserrat">dla kogo?</h4>
+                            <h5 class="orange montserrat">studenci</h5>
+                            <h5 class="orange montserrat">architekci</h5>
+                            <h5 class="orange montserrat">graficy</h5>
+                        </div>
+                        <div class="header-item">
+                            <h4 class="montserrat">co potrzebujesz?</h4>
+                            <h5 class="orange montserrat">dobrego laptopa</h5>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>
+                            Czy musisz już coś umieć wybierając się na nasz kurs? Absolutnie nic! Wszystkiego dowiesz
+                            się na miejscu, także poznasz od podstaw programy, w których będziemy operować.
+                            <br />
+                            <br />
+                            Ponieważ nasz kurs poświęcony jest głównie wizualizacjom 3d, przeznaczony jest on głównie
+                            dla architektów oraz grafików, którzy chcą rozwinąć swoje umiejętności. Nie jesteś ani
+                            jednym, ani drugim? Nie szkodzi! Jeśli chcesz nauczyć się Blendera hobbystycznie, nasz kurs
+                            będzie dla Ciebie idealnym punktem startowym, aby poznać podstawy tego programu, które
+                            pomogą Ci uczyć się później dalej!
+                            <br />
+                            <br />
+                            Będziesz musiał mieć własnego laptopa. Praca na własnym sprzęcie jest zawsze dużo bardziej
+                            wygodna, a także po skończeniu kursu będziesz mieć dostęp do swoich plików. Niestety praca z
+                            grafiką 3d wymaga pewnych technicznych zasobów, więc aby w pełni wykorzystać możliwości
+                            naszego kursu, dobrze by było, aby Twój laptop nadawał się do pracy z grafiką 3d i spełniał
+                            poniższe wymagania minimalne:
+                            <br />
+                            <br />
+                            - Windows 8 lub Windows 10 <br />
+                            - 64-bitowy procesor dwurdzeniowy<br />
+                            - 8GB Pamięci RAM<br />
+                            - Karta graficzna z 2GB pamięci VRAM (nie może być zintegrowana!) <br />
+                            - Myszka, abyś mógł komfortowo pracować <br />
+                            <br />
+                            <br />
+                            Jeśli Twój sprzęt nie będzie spełniać tych wymagań, nie jesteśmy w stanie Ci zagwarantować
+                            komfortowej pracy i nauki w czasie zajęć.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="image-container">
+                    <img src="/assets/img/details03.jpg" alt="Wizualizacje 3d kurs wrocław">
+                </div>
+                <div class="content-container">
+                    <div class="headers">
+                        <div class="header-item">
+                            <h4 class="montserrat">temat kursu?</h4>
+                            <h5 class="orange montserrat">wizualizacje 3d</h5>
+                        </div>
+                        <div class="header-item">
+                            <h4 class="montserrat">zakres?</h4>
+                            <h5 class="orange montserrat">pełny</h5>
+                        </div>
+                        <div class="header-item">
+                            <h4 class="montserrat">poziom po ukończeniu?</h4>
+                            <h5 class="orange montserrat">średnio<br />zaawansowany</h5>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>
+                            Podczas 32 godzin poznasz podstawy tworzenia wizualizacji w pełnym zakresie - od
+                            modelowania, aż po postprocessing. Ponieważ materiału jest bardzo dużo, będziesz też
+                            otrzymywać zadania domowe, które pomogą Ci łatwiej przyswoić zdobywaną wiedzę i
+                            umiejętności.
+                            <br />
+                            <br />
+                            Szczegółowy program kursu: <br />
+                            Dzień 1: <br />
+                            - Poznanie najważniejszych elementów interfejsu programu <br />
+                            - Podstawowe narzędzia do modelowania <br />
+                            - Przygotowanie modeli pod kątem projektowanej sceny <br />
+                            <br />
+                            <br />
+                            Dzień 2: <br />
+                            - Tworzenie realistycznych materiałów w Blender Cycles <br />
+                            - Materiałowanie i teksturowanie wykonanych modeli <br />
+                            - Dodawanie detali do sceny <br />
+                            - Ustawianie świateł i renderu sceny <br />
+                            <br />
+                            <br />
+                            Dzień 3: <br />
+                            - Importowanie modeli ze Sketchupa <br />
+                            - Obróbka importowanych modeli <br />
+                            - Praca ze sceną zewnętrzną <br />
+                            - Dodawanie importowanych assetów i własnych modeli <br />
+                            - Ustawianie świateł dla sceny zewnętrznej <br />
+                            <br />
+                            <br />
+                            Dzień 4: <br />
+                            - Dodawanie detali do sceny zewnętrznej <br />
+                            - Techniki animacji do automatyzacji renderów <br />
+                            - Postprocessing wykonanych scen w Adobe Photoshop <br />
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
     </div>
 
 </body>

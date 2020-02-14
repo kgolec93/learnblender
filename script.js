@@ -27,35 +27,47 @@ var counter = 0;
 
 
 function slideImage(par) {
-    if (par === 'prev'){
+    if (par === 'prev') {
         if (counter === 0) {
             counter = images.length - 1;
         }
         else {
-            counter --;
+            counter--;
         }
     }
     else if (par === 'next') {
-        if (counter === images.length -1 ){ 
+        if (counter === images.length - 1) {
             counter = 0
         }
         else {
-            counter ++;
+            counter++;
         }
     }
     const gallery = document.getElementById('images-wrapper');
     let image = document.createElement('img');
     console.log(gallery.childNodes)
-    
+
     image.src = images[counter].src;
     image.alt = images[counter].alt;
     image.classList.add('main-image')
     gallery.appendChild(image);
     function remove() {
-        setTimeout(()=>{
+        setTimeout(() => {
             gallery.removeChild(gallery.childNodes[1])
         }, 400)
     }
     remove();
 
 };
+
+function detailsSelection(nr) {
+    const elements = document.getElementById("details-nav").querySelectorAll('li');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.remove('active');
+    }
+    event.target.classList.add('active');
+    const wrapper = document.getElementById('items-wrapper');
+    const itemWidth = document.getElementById('detail-item').offsetWidth;
+    console.log(itemWidth)
+    wrapper.style = `transform: translateX(${-1 * nr * itemWidth}px)`
+}

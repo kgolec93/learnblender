@@ -270,6 +270,9 @@ body {
                 li {
                     padding: 12px 20px;
                     margin: 0px 8px;
+                    &:hover {
+                        cursor: pointer;
+                    }
                     &.active {
                         position: relative;
                         &::after {
@@ -288,9 +291,53 @@ body {
     }
 }
 #details-container {
-    min-height: 700px;
     width: 100%;
     overflow-x: hidden;
+    
+    #items-wrapper {
+        min-height: 700px;
+        display: flex;
+        height: 100%;
+        transition: transform 0.6s ease-in-out;
+        .item {
+            min-width: 100%;
+            max-width: 100%;
+            display: flex;
+            .image-container {
+                position: relative;
+                min-width: 25%;
+                max-width: 300px;
+                height: 100%;
+                img {
+                    @include cover();
+                }
+            }
+            .content-container {
+                flex: auto;
+                display: flex;
+                .headers {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    padding: 3vw;
+                    .header-item {
+                        h4 {
+                            font-size: 2vw;
+                        }
+                        h5 {
+                            font-size: 3vw;
+                        }
+                    }
+                }
+                .description {
+                    flex: 1;
+                    padding: 3vw;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
 }
 
 @keyframes fade-in {
