@@ -1,0 +1,200 @@
+$white: #f3f3f3;
+$orange: #ff9a36;
+
+@mixin after {
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #555971;
+    opacity: 0.72;
+  }
+}
+
+@mixin cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:300|Montserrat:700|Raleway:300&display=swap&subset=latin-ext");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+  color: $white;
+  text-align: justify;
+}
+
+.comfortaa {
+  font-family: "Comfortaa", sans-serif;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #282a33;
+}
+
+.jumbo {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  img.background {
+    @include cover();
+  }
+  @include after();
+  .jumbo-content {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img.logos {
+      height: 64px;
+      width: auto;
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-size: 4vw;
+    }
+    h3 {
+      font-size: 2vw;
+    }
+    div.jumbo-button {
+      margin-top: 64px;
+      border: 1px solid $white;
+      font-size: 1vw;
+      padding: 8px 48px;
+      border-radius: 100px;
+    }
+  }
+}
+
+.section-intro {
+  display: flex;
+  .content-container {
+    flex: 4;
+    padding: 5vw;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .image-container {
+    flex: 6;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.section-02 {
+  max-width: 900px;
+  margin: 4vw;
+}
+
+#offer-items {
+  display: flex;
+  height: 600px;
+  .item {
+    flex: 1;
+    position: relative;
+
+    img {
+      @include cover();
+    }
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include after();
+      h4 {
+        z-index: 10;
+        font-size: 2vw;
+        &:hover {
+          cursor: default;
+        }
+      }
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+#section-pros {
+  display: flex;
+  flex-wrap: wrap;
+  .item {
+    background-color: #1b1c1e;
+    margin: 8px;
+    min-height: 400px;
+    min-width: 40%;
+    flex: 1;
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    .content {
+        padding: 3vw;
+        max-width: 70%;
+        h4, h4>span {
+            font-size: 1.6vw;
+            color: $orange;
+        }
+    }
+  }
+}
+
+#image-gallery {
+    height: 100vh;
+    position: relative;
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        transition: transform 0.2s ease-in-out;
+        &:hover {
+            cursor: pointer;
+            transform: translateY(-50%) scale(1.2);
+        }
+        &.left {
+            left: 32px;
+        }
+        &.right {
+            right: 32px;
+        }
+
+    }
+    .main-image {
+        @include cover();
+        position: absolute;
+        top: 0;
+        left: 0;
+
+    }
+}
