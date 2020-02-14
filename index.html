@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LearnBlender.pl | kursy wizualizacji architektonicznych</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -166,9 +167,12 @@
     </div>
 
     <div id="image-gallery">
-        <img class='arrow left' src="/assets/svg/arrow-left.svg" alt="LEFT">
-        <img class='arrow right' src="/assets/svg/arrow-right.svg" alt="RIGHT">
-        <img class='main-image' src="/assets/img/gallery/01.jpg" alt="Blender Image 01">
+        <img onclick="slideImage('prev')" class='arrow left' src="/assets/svg/arrow-left.svg" alt="LEFT">
+        <img onclick="slideImage('next')" class='arrow right' src="/assets/svg/arrow-right.svg" alt="RIGHT">
+        <div id="images-wrapper">
+            <img class='main-image' src="/assets/img/gallery/01.jpg" alt="Blender Image 01">
+        </div>
+
     </div>
 
 </body>
